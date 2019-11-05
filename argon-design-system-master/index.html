@@ -180,16 +180,39 @@
                 <div class="btn-wrapper mt-5">
                   <a href="https://www.creative-tim.com/product/argon-design-system" class="btn btn-lg btn-white btn-icon mb-3 mb-sm-0">
                     <span class="btn-inner--icon"><i class="ni ni-cloud-download-95"></i></span>
-                    <span class="btn-inner--text">Download HTML</span>
+                    <span class="btn-inner--text" id="downloadbutton"></span>
+
+                      <script> 
+                      function getOS() {
+                        var userAgent = window.navigator.userAgent,
+                            platform = window.navigator.platform,
+                            macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+                            windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+                            iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+                            os = null;
+
+                        if (macosPlatforms.indexOf(platform) !== -1) {
+                          os = 'Mac OS';
+                        } else if (iosPlatforms.indexOf(platform) !== -1) {
+                          os = 'iOS';
+                        } else if (windowsPlatforms.indexOf(platform) !== -1) {
+                          os = 'Windows';
+                        } else if (/Android/.test(userAgent)) {
+                          os = 'Android';
+                        } else if (!os && /Linux/.test(platform)) {
+                          os = 'Linux';
+                        }
+
+                        return os;
+                      }
+                      document.getElementById("downloadbutton").innerHTML = "Download for "+getOS();
+                      </script>                       
+
                   </a>
                   <a href="https://github.com/creativetimofficial/argon-design-system" class="btn btn-lg btn-github btn-icon mb-3 mb-sm-0" target="_blank">
                     <span class="btn-inner--icon"><i class="fa fa-github"></i></span>
                     <span class="btn-inner--text"><span class="text-warning">Star us</span> on Github</span>
                   </a>
-                </div>
-                <div class="mt-5">
-                  <small class="text-white font-weight-bold mb-0 mr-2">*proudly coded by</small>
-                  <img alt="image" src="./assets/img/brand/creativetim-white-slim.png" style="height: 28px;">
                 </div>
               </div>
             </div>
