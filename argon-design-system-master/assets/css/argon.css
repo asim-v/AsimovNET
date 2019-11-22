@@ -15,6 +15,11 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
+@font-face{
+    font-family: "montserrat";
+    src:url("montserrat-regular-webfont.woff");
+}
+
 :root
 {
     --blue: #5e72e4;
@@ -13855,6 +13860,13 @@ button.bg-darker:focus
 .text-white
 {
     color: #fff !important;
+    text-shadow: 0.8px 0.8px 5px black;
+    font-weight: bold;
+    font-family: "montserrat"
+}
+.text-purple{
+    color: #5e72e4;
+    font-weight: bold;
 }
 
 .text-primary
@@ -20321,4 +20333,10 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle
 {
     right: 10px;
     left: auto;
+}
+
+canvas {
+    z-index: -10;
+    height: 100%;
+    width: 100%;
 }
